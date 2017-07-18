@@ -126,7 +126,16 @@ mc5_mthds <- function() {
       e1 <- bquote(coff <- c(coff, -1*log2(0.88)))
       list(e1)
       
+    },
+    
+    pc30 = function() {
+      
+      e1 <- bquote(coff <- c(coff, 30))
+      list(e1)
+      
     }
+  )
+}
   )
 }
 
