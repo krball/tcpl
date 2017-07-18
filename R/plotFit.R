@@ -178,8 +178,8 @@
   }
   
   axis(side = 1, 
-       at = axTicks(side = 1),
-       labels = signif(10^axTicks(side = 1), digits = 1),
+       at = at = unique(logc),
+       labels = signif(10^unique(logc),digits=3),
        font = 1, 
        lwd = 2, 
        cex.axis = 1.2, 
