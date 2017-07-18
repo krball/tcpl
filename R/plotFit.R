@@ -285,12 +285,12 @@
     htxt2 <- paste0(c("val:  ", "sd:   "),
                     c(paste(sapply(hprs, 
                                    function(x) {
-                                     paste0(x, spaces(9 - nchar(x)))
+                                     paste0(x, spaces(9 - ifelse(is.na(chid), 2, nchar(chid))))
                                    }),
                             collapse = ""),
                       paste(sapply(hsds, 
                                    function(x) {
-                                     paste0(x, spaces(9 - nchar(x)))
+                                     paste0(x, spaces(9 - ifelse(is.na(chid), 2, nchar(chid))))
                                    }),
                             collapse = "")),
                     collapse = "\n")
@@ -336,12 +336,12 @@
     gtxt2 <- paste0(c("val:  ", "sd:   "),
                     c(paste(sapply(gprs, 
                                    function(x) {
-                                     paste0(x, spaces(9 - nchar(x)))
+                                     paste0(x, spaces(9 - ifelse(is.na(chid), 2, nchar(chid))))
                                    }),
                             collapse = ""),
                       paste(sapply(gsds, 
                                    function(x) {
-                                     paste0(x, spaces(9 - nchar(x)))
+                                     paste0(x, spaces(9 - ifelse(is.na(chid), 2, nchar(chid))))
                                    }),
                             collapse = "")),
                     collapse = "\n")
@@ -378,23 +378,23 @@
                  "\n",
                  paste0("AIC:  ", 
                         aics[1], 
-                        spaces(12 - nchar(aics[1])),
+                        spaces(12 - nchar(aics[1],keepNA=FALSE)),
                         aics[2],
-                        spaces(12 - nchar(aics[2])),
+                        spaces(12 - nchar(aics[2],keepNA=FALSE)),
                         aics[3]),
                  "\n",
                  paste0("PROB: ", 
                         prob[1], 
-                        spaces(12 - nchar(prob[1])),
+                        spaces(12 - nchar(prob[1],keepNA=FALSE)),
                         prob[2],
-                        spaces(12 - nchar(prob[2])),
+                        spaces(12 - nchar(prob[2],keepNA=FALSE)),
                         prob[3]),
                  "\n",
                  paste0("RMSE: ", 
                         rmse[1], 
-                        spaces(12 - nchar(rmse[1])),
+                        spaces(12 - nchar(rmse[1],keepNA=FALSE)),
                         rmse[2],
-                        spaces(12 - nchar(rmse[2])),
+                        spaces(12 - nchar(rmse[2],keepNA=FALSE)),
                         rmse[3]),
                  "\n\n")
   
@@ -402,18 +402,18 @@
   pars$max_med  <- signif(pars$max_med,  3)
   
   ntxt <- paste0("MAX_MEAN: ", pars$max_mean,
-                 spaces(10 - nchar(pars$max_mean)),
+                 spaces(10 - nchar(pars$max_mean,keepNA=FALSE)),
                  "MAX_MED: ", pars$max_med, 
-                 spaces(10 - nchar(pars$max_med)),
+                 spaces(10 - nchar(pars$max_med,keepNA=FALSE)),
                  "BMAD: ", signif(pars$bmad, 3),
                  "\n\n")
   
   if (!is.null(pars$hitc)) {
     
     pars$coff <- signif(pars$coff, 3)
-    ctxt <- paste0("COFF: ", pars$coff, spaces(7 - nchar(pars$coff)),
-                   "HIT-CALL: ", pars$hitc, spaces(5 - nchar(pars$hitc)), 
-                   "FITC: ", pars$fitc, spaces(5 - nchar(pars$fitc)),
+    ctxt <- paste0("COFF: ", pars$coff, spaces(7 - nchar(pars$coff,keepNA=FALSE)),
+                   "HIT-CALL: ", pars$hitc, spaces(5 - nchar(pars$hitc,keepNA=FALSE)), 
+                   "FITC: ", pars$fitc, spaces(5 - nchar(pars$fitc,keepNA=FALSE)),
                    "ACTP: ", round(pars$actp, 2),
                    "\n\n")
     
