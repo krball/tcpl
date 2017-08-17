@@ -178,7 +178,7 @@
   }
   
   axis(side = 1, 
-       at = at = unique(logc),
+       at = unique(logc),
        labels = signif(10^unique(logc),digits=3),
        font = 1, 
        lwd = 2, 

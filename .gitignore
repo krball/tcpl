@@ -1,13 +1,3 @@
 .Rproj.user
 .Rhistory
 .RData
-tcpl.Rproj
-TCPL.log
-vignettes/*.tex
-vignettes/*.aux
-vignettes/*.pdf
-vignettes/*.toc
-vignettes/*.bib
-vignettes/*.log
-vignettes/*.gz
-tcpl.Rcheck
